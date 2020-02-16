@@ -81,3 +81,55 @@ const getMedian = (numbers) => {
 }
 
 console.log(getMedian(numForArr));
+
+//-----------------------------------------------------------------------------
+// Создайте функцию filterEvenNumbers(...numbers) – которая 
+// фильтрует четные числа переданные как аргументы функции
+// Пример: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5]
+
+const numForEvenNum = [1, 2, 3, 4, 5, 6, 7];
+const filterEvenNumbers = (numbers) => {
+    let res = numbers.filter(num => num % 2 !== 0);
+    return res;
+}
+console.log(filterEvenNumbers(numForEvenNum));
+
+//-----------------------------------------------------------------------------
+// Создайте функцию countPositiveNumbers(...numbers) – которая посчитает количество числел больших 0
+// Пример: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3
+
+const numForCount = [1, -2, 3, -4, -5, 6];
+const countPositiveNumbers = (numbers) => {
+    let res = numbers.filter(num => num > 0);
+    return res.length;
+}
+console.log(countPositiveNumbers(numForCount));
+
+//-----------------------------------------------------------------------------
+// Создайте функцию getDividedByFive(...numbers) – которая отфильтрует все элементы 
+// в массиве и оставит только те, которые делятся нацело на 5
+// Пример: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55]
+
+const numForFive = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2, 5];
+const getDividedByFive = (numbers) => {
+    let res = numbers.filter(num => num % 5 === 0);
+    return res;
+}
+console.log(getDividedByFive(numForFive));
+
+//-----------------------------------------------------------------------------
+// Создайте функцию replaceBadWords(string) – которая 1) разобьет фразу на слова, 
+// 2) заменит плохие слова на звездочки (*). 
+// При решении этого задания необходимо разбить массив на слова с помощью функции .split(" "), 
+// после чего массив необходимо будет склеить .join(" ") Плохие слова: 
+// shit и fuck. Предусмотрите возможность расширять список этих слов в будущем.
+// Пример: replaceBadWords("Are you fucking kidding?") -> "Are you ****ing kidding?" 
+// Пример: replaceBadWords("Holy shit!") -> "Holy ****!" 
+// Пример: replaceBadWords("It's bullshit!") -> "It's bull****!"
+
+const replaceBadWords = (string) => {
+    let res = string.replace( (/(fuck|shit)/gi), '****');
+    return res;
+}
+
+console.log(replaceBadWords("Are you fucking kidding shit?"));
