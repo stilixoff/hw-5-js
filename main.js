@@ -144,10 +144,13 @@ const divideByThree = (word = "Commander") => {
     let spliWordsd = word.split('');
     let res = [];
     for(let i = 0; i < spliWordsd.length; i += val) {
-        res.push(spliWordsd.slice(i, i + val).join(''));
+        res.push(spliWordsd.slice(i, i + val));
     }
-    let result = res.forEach(n => n.join(''));
-    return result;
+    let resJoin = [];
+    for(let i = 0; i < res.length; i++) {
+        resJoin.push(res[i].join(''));
+    }
+    return resJoin;
 }
 
 console.log(divideByThree());
