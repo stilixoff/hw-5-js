@@ -133,3 +133,21 @@ const replaceBadWords = (string) => {
 }
 
 console.log(replaceBadWords("Are you fucking kidding shit?"));
+
+//-----------------------------------------------------------------------------
+// Создайте функцию divideByThree(word), которая разбивает каждое слово на условные слоги по 3 буквы. 
+// Если букв меньше трёх – не разбиваем. Пробелы всегда удаляются. Строка приводится к нижнему регистру. 
+// Пример: divideByThree("Commander) -> ["com", "man", "der"] Пример: divideByThree("live") -> ["liv", "e"]
+
+const divideByThree = (word = "Commander") => {
+    const val = 3;
+    let spliWordsd = word.split('');
+    let res = [];
+    for(let i = 0; i < spliWordsd.length; i += val) {
+        res.push(spliWordsd.slice(i, i + val).join(''));
+    }
+    let result = res.forEach(n => n.join(''));
+    return result;
+}
+
+console.log(divideByThree());
